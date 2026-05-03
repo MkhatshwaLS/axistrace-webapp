@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/backend/">
+    <Project Path="backend/AxisTrace.Api/AxisTrace.Api.csproj" />
+  </Folder>
+</Solution>
