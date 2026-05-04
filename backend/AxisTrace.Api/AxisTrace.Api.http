@@ -1,6 +1,0 @@
-@AxisTrace.Api_HostAddress = http://localhost:5076
-
-GET {{AxisTrace.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

@@ -6,15 +6,11 @@ C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.A
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\bin\Debug\net10.0\AxisTrace.Api.runtimeconfig.json
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\bin\Debug\net10.0\AxisTrace.Api.dll
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\bin\Debug\net10.0\AxisTrace.Api.pdb
-C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\bin\Debug\net10.0\Microsoft.OpenApi.dll
-C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.csproj.AssemblyReference.cache
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\rpswa.dswa.cache.json
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.AssemblyInfoInputs.cache
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.AssemblyInfo.cs
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.csproj.CoreCompileInputs.cache
-C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.sourcelink.json
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\rjimswa.dswa.cache.json
@@ -26,7 +22,6 @@ C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.A
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\staticwebassets.development.json
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\swae.build.ex.cache
-C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrac.A2767088.Up2Date
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.dll
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\refint\AxisTrace.Api.dll
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.pdb
