@@ -27,3 +27,5 @@ C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.A
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.pdb
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.genruntimeconfig.cache
 C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\ref\AxisTrace.Api.dll
+C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.csproj.AssemblyReference.cache
+C:\Users\uptow\Documents\Projects\AxisTrace\axistrace-webapp\backend\AxisTrace.Api\obj\Debug\net10.0\AxisTrace.Api.MvcApplicationPartsAssemblyInfo.cs
