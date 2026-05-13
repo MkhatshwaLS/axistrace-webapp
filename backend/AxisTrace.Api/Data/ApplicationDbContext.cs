@@ -102,10 +102,10 @@ namespace AxisTrace.Api.Data
 
             // ProgressUpdate relationships (ensure only one entity is referenced)
             modelBuilder.Entity<ProgressUpdate>()
-                .HasCheckConstraint("CK_ProgressUpdate_SingleReference",
+                .ToTable(table => table.HasCheckConstraint("CK_ProgressUpdate_SingleReference",
                     "(ProjectId IS NOT NULL AND MilestoneId IS NULL AND TaskId IS NULL) OR " +
                     "(ProjectId IS NULL AND MilestoneId IS NOT NULL AND TaskId IS NULL) OR " +
-                    "(ProjectId IS NULL AND MilestoneId IS NULL AND TaskId IS NOT NULL)");
+                    "(ProjectId IS NULL AND MilestoneId IS NULL AND TaskId IS NOT NULL)"));
 
             // Indexes for performance
             modelBuilder.Entity<User>()
@@ -128,13 +128,13 @@ namespace AxisTrace.Api.Data
             modelBuilder.Entity<Milestone>()
                 .HasIndex(m => m.Status);
 
-            modelBuilder.Entity<Task>()
+            modelBuilder.Entity<ProjectTask>()
                 .HasIndex(t => t.MilestoneId);
 
-            modelBuilder.Entity<Task>()
+            modelBuilder.Entity<ProjectTask>()
                 .HasIndex(t => t.AssignedUserId);
 
-            modelBuilder.Entity<Task>()
+            modelBuilder.Entity<ProjectTask>()
                 .HasIndex(t => t.Status);
 
             modelBuilder.Entity<Comment>()

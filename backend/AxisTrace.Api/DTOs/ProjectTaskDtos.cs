@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using AxisTrace.Api.Models;
+using TaskStatus = AxisTrace.Api.Models.TaskStatus;
 
 namespace AxisTrace.Api.DTOs
 {
