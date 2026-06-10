@@ -8,6 +8,9 @@ namespace AxisTrace.Api.DTOs
         [MaxLength(2000)]
         public string Content { get; set; } = string.Empty;
 
+        [Required]
+        public int UserId { get; set; }
+
         public int? ProjectId { get; set; }
 
         public int? MilestoneId { get; set; }
