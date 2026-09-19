@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AxisTrace.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02fd2dc878e14ca31834a2133a17a814d881ed5e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f2a5cae75f6718175d85175e3d70d6790fa88f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("AxisTrace.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AxisTrace.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
