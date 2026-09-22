@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <header>
+        <h1>Project Details</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="../pages/dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="project-info">
+            <h2 id="project-title">Project Title</h2>
+            <p id="project-description">Project description goes here.</p>
+            <div id="project-details">
+                <h3>Details</h3>
+                <p><strong>Start Date:</strong> <span id="start-date">N/A</span></p>
+                <p><strong>End Date:</strong> <span id="end-date">N/A</span></p>
+                <p><strong>Status:</strong> <span id="status">N/A</span></p>
+            </div>
+        </section>
+        
+        <section id="project-tasks">
+            <h3>Tasks</h3>
+            <ul id="task-list">
+                <li>No tasks available.</li>
+            </ul>
+        </section>
+        
+        <section id="comments">
+            <h3>Comments</h3>
+            <div id="comment-list">
+                <p>No comments available.</p>
+            </div>
+            <textarea id="comment-input" placeholder="Add a comment..."></textarea>
+            <button id="add-comment">Submit</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 AxisTrace. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/project-details.js"></script>
+</body>
+</html>

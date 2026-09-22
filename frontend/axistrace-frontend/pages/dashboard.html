@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="user-info">
+            <h2>Welcome, <span id="username"></span>!</h2>
+            <p>Your recent activities:</p>
+            <ul id="activity-list"></ul>
+        </section>
+        <section id="project-summary">
+            <h2>Your Projects</h2>
+            <div id="projects-container"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 AxisTrace. All rights reserved.</p>
+    </footer>
+    <script src="../js/api.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>
