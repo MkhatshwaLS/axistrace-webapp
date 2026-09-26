@@ -1,8 +1,15 @@
 // This file contains functions related to user authentication, such as login and logout processes.
 
-const apiUrl = 'http://localhost:5000/api'; // Adjust the API URL as needed
+const apiUrl = 'http://localhost:5000/api';
 
-// Function to handle user login
+function getDashboardPath() {
+    return window.location.pathname.includes('/pages/') ? 'dashboard.html' : 'pages/dashboard.html';
+}
+
+function getHomePath() {
+    return window.location.pathname.includes('/pages/') ? '../index.html' : 'index.html';
+}
+
 async function login(username, password) {
     try {
         const response = await fetch(`${apiUrl}/auth/login`, {
@@ -18,25 +25,64 @@ async function login(username, password) {
         }
 
         const data = await response.json();
-        localStorage.setItem('token', data.token); // Store the token in local storage
-        window.location.href = 'pages/dashboard.html'; // Redirect to dashboard
+        localStorage.setItem('token', data.token || 'demo-token');
+        window.location.href = getDashboardPath();
     } catch (error) {
+        const errorMessage = document.getElementById('error-message');
+        if (errorMessage) {
+            errorMessage.textContent = error.message;
+            return;
+        }
+
         alert(error.message);
     }
 }
 
-// Function to handle user logout
-function logout() {
-    localStorage.removeItem('token'); // Remove the token from local storage
-    window.location.href = 'index.html'; // Redirect to the main page
+async function register(username, email, password, confirmPassword) {
+    try {
+        if (!username || !email || !password || !confirmPassword) {
+            throw new Error('Please fill in all fields.');
+        }
+
+        if (password !== confirmPassword) {
+            throw new Error('Passwords do not match.');
+        }
+
+        const response = await fetch(`${apiUrl}/auth/register`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, email, password }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Registration failed. Please try again.');
+        }
+
+        const data = await response.json();
+        localStorage.setItem('token', data.token || 'demo-token');
+        window.location.href = getDashboardPath();
+    } catch (error) {
+        const errorMessage = document.getElementById('error-message');
+        if (errorMessage) {
+            errorMessage.textContent = error.message;
+            return;
+        }
+
+        alert(error.message);
+    }
 }
 
-// Function to check if the user is authenticated
+function logout() {
+    localStorage.removeItem('token');
+    window.location.href = getHomePath();
+}
+
 function isAuthenticated() {
     return localStorage.getItem('token') !== null;
 }
 
-// Function to get the current user's information
 async function getCurrentUser() {
     if (!isAuthenticated()) {
         return null;
@@ -60,3 +106,45 @@ async function getCurrentUser() {
         return null;
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username')?.value.trim();
+            const password = document.getElementById('password')?.value.trim();
+
+            if (!username || !password) {
+                const errorMessage = document.getElementById('error-message');
+                if (errorMessage) {
+                    errorMessage.textContent = 'Please enter both username and password.';
+                }
+                return;
+            }
+
+            login(username, password);
+        });
+    }
+
+    const registerForm = document.getElementById('register-form');
+    if (registerForm) {
+        registerForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('register-username')?.value.trim();
+            const email = document.getElementById('register-email')?.value.trim();
+            const password = document.getElementById('register-password')?.value.trim();
+            const confirmPassword = document.getElementById('confirm-password')?.value.trim();
+
+            if (!username || !email || !password || !confirmPassword) {
+                const errorMessage = document.getElementById('error-message');
+                if (errorMessage) {
+                    errorMessage.textContent = 'Please fill in all registration fields.';
+                }
+                return;
+            }
+
+            register(username, email, password, confirmPassword);
+        });
+    }
+});

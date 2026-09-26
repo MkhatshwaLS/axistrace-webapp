@@ -3,54 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Details</title>
+    <title>Project Details | AxisTrace</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-    <header>
-        <h1>Project Details</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="../pages/dashboard.html">Dashboard</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section id="project-info">
-            <h2 id="project-title">Project Title</h2>
-            <p id="project-description">Project description goes here.</p>
-            <div id="project-details">
-                <h3>Details</h3>
-                <p><strong>Start Date:</strong> <span id="start-date">N/A</span></p>
-                <p><strong>End Date:</strong> <span id="end-date">N/A</span></p>
-                <p><strong>Status:</strong> <span id="status">N/A</span></p>
-            </div>
-        </section>
-        
-        <section id="project-tasks">
-            <h3>Tasks</h3>
-            <ul id="task-list">
-                <li>No tasks available.</li>
-            </ul>
-        </section>
-        
-        <section id="comments">
-            <h3>Comments</h3>
-            <div id="comment-list">
-                <p>No comments available.</p>
-            </div>
-            <textarea id="comment-input" placeholder="Add a comment..."></textarea>
-            <button id="add-comment">Submit</button>
-        </section>
-    </main>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="brand">AxisTrace</div>
+            <nav aria-label="Project details navigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a class="active" href="projects.html">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <footer>
-        <p>&copy; 2023 AxisTrace. All rights reserved.</p>
-    </footer>
+        <main>
+            <section class="page-hero compact">
+                <div>
+                    <p class="eyebrow">Project overview</p>
+                    <h1 id="project-title">Customer Portal</h1>
+                    <p id="project-description" class="lead">Customer account management and onboarding workflow redesign with a stronger self-serve experience.</p>
+                </div>
+            </section>
+
+            <section class="content-grid">
+                <article class="card panel" id="project-info">
+                    <div class="section-header">
+                        <h2>Details</h2>
+                        <span class="status-badge status-active" id="status">Active</span>
+                    </div>
+                    <div id="project-details">
+                        <p><strong>Start Date:</strong> <span id="start-date">2026-08-01</span></p>
+                        <p><strong>End Date:</strong> <span id="end-date">2026-10-15</span></p>
+                        <p><strong>Owner:</strong> <span id="owner">Maya Chen</span></p>
+                    </div>
+                </article>
+
+                <article class="card panel" id="project-tasks">
+                    <div class="section-header">
+                        <h2>Tasks</h2>
+                    </div>
+                    <ul id="task-list" class="activity-list">
+                        <li>
+                            <div class="activity-item">
+                                <strong>Finalize onboarding flow</strong>
+                                <small>Design review</small>
+                            </div>
+                            <span class="activity-time">Due today</span>
+                        </li>
+                        <li>
+                            <div class="activity-item">
+                                <strong>Migration QA checklist</strong>
+                                <small>Engineering</small>
+                            </div>
+                            <span class="activity-time">Due tomorrow</span>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="card panel" id="comments" style="margin-top: 18px;">
+                <div class="section-header">
+                    <h2>Comments</h2>
+                </div>
+                <div id="comment-list">
+                    <p>No comments available.</p>
+                </div>
+                <div class="form-group" style="margin-top: 16px;">
+                    <textarea id="comment-input" placeholder="Add a comment..."></textarea>
+                </div>
+                <button id="add-comment">Submit</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 AxisTrace. All rights reserved.</p>
+        </footer>
+    </div>
 
     <script src="../js/api.js"></script>
     <script src="../js/project-details.js"></script>

@@ -3,33 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects | AxisTrace</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-    <header>
-        <h1>Projects</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="login.html">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="project-list">
-            <h2>Your Projects</h2>
-            <button id="new-project-btn">Create New Project</button>
-            <ul id="projects">
-                <!-- Projects will be dynamically loaded here -->
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 AxisTrace. All rights reserved.</p>
-    </footer>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="brand">AxisTrace</div>
+            <nav aria-label="Project navigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a class="active" href="projects.html">Projects</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="page-hero compact">
+                <div>
+                    <p class="eyebrow">Portfolio</p>
+                    <h1>All projects</h1>
+                    <p class="lead">Track delivery, priorities, and momentum across your active workstreams.</p>
+                </div>
+            </section>
+
+            <section class="card panel" id="project-list">
+                <div class="section-header">
+                    <h2>Current work</h2>
+                    <button id="new-project-btn">Create project</button>
+                </div>
+                <div id="projects" class="project-grid">
+                    <article class="project-card">
+                        <div class="project-card-header">
+                            <h3>Customer Portal</h3>
+                            <span class="status-badge status-active">Active</span>
+                        </div>
+                        <p>Restructuring account management and onboarding workflow.</p>
+                        <div class="project-meta">
+                            <span>9 tasks</span>
+                            <span>Due in 3 days</span>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-card-header">
+                            <h3>AI Assistant Beta</h3>
+                            <span class="status-badge status-needs-review">Review</span>
+                        </div>
+                        <p>Testing pilot workflows and validating adoption metrics.</p>
+                        <div class="project-meta">
+                            <span>11 tasks</span>
+                            <span>Due today</span>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-card-header">
+                            <h3>Operations Dashboard</h3>
+                            <span class="status-badge status-complete">Complete</span>
+                        </div>
+                        <p>Dashboard refresh shipped with improved KPI visibility.</p>
+                        <div class="project-meta">
+                            <span>16 tasks</span>
+                            <span>Closed</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 AxisTrace. All rights reserved.</p>
+        </footer>
+    </div>
+
     <script src="../js/api.js"></script>
     <script src="../js/projects.js"></script>
 </body>

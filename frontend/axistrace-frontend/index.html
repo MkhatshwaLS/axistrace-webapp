@@ -3,28 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AxisTrace</title>
+    <title>AxisTrace | Project Operations</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to AxisTrace</h1>
-        <nav>
-            <ul>
-                <li><a href="pages/login.html">Login</a></li>
-                <li><a href="pages/dashboard.html">Dashboard</a></li>
-                <li><a href="pages/projects.html">Projects</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>Your Project Management Solution</h2>
-        <p>Manage your projects efficiently with AxisTrace.</p>
-    </main>
-    <footer>
-        <p>&copy; 2023 AxisTrace. All rights reserved.</p>
-    </footer>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="brand">AxisTrace</div>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="pages/dashboard.html">Dashboard</a></li>
+                    <li><a href="pages/projects.html">Projects</a></li>
+                    <li><a href="pages/login.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="page-hero">
+                <div>
+                    <p class="eyebrow">Modern project coordination</p>
+                    <h1>Deliver smarter work with clarity.</h1>
+                    <p class="lead">AxisTrace helps teams manage projects, tasks, milestones, and progress from one streamlined workspace.</p>
+                    <div class="hero-actions">
+                        <a class="primary-btn" href="pages/login.html">Get started</a>
+                        <a class="secondary-btn" href="pages/dashboard.html">View dashboard</a>
+                    </div>
+                </div>
+
+                <div class="card spotlight">
+                    <div class="mini-summary">
+                        <div class="summary-row">
+                            <span class="summary-label">Active projects</span>
+                            <span class="summary-value">18</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Milestones due</span>
+                            <span class="summary-value">6</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Delivery health</span>
+                            <span class="summary-value">92%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="metrics-grid">
+                <article class="card metric">
+                    <span class="label">On track</span>
+                    <div class="value">12</div>
+                    <span class="delta positive">+8.4% this quarter</span>
+                </article>
+                <article class="card metric">
+                    <span class="label">In review</span>
+                    <div class="value">4</div>
+                    <span class="delta neutral">2 waiting on feedback</span>
+                </article>
+                <article class="card metric">
+                    <span class="label">Completed</span>
+                    <div class="value">27</div>
+                    <span class="delta positive">+15 launches</span>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 AxisTrace. All rights reserved.</p>
+        </footer>
+    </div>
+
     <script src="js/api.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/dashboard.js"></script>

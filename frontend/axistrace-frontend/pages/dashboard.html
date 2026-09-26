@@ -3,34 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dashboard | AxisTrace</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-    <header>
-        <h1>Dashboard</h1>
-        <nav>
-            <ul>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="logout.html">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="user-info">
-            <h2>Welcome, <span id="username"></span>!</h2>
-            <p>Your recent activities:</p>
-            <ul id="activity-list"></ul>
-        </section>
-        <section id="project-summary">
-            <h2>Your Projects</h2>
-            <div id="projects-container"></div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 AxisTrace. All rights reserved.</p>
-    </footer>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="brand">AxisTrace</div>
+            <nav aria-label="Dashboard navigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a class="active" href="dashboard.html">Dashboard</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="page-hero compact">
+                <div>
+                    <p class="eyebrow">Overview</p>
+                    <h1>Welcome back, <span id="username">Alex</span>.</h1>
+                    <p class="lead">Here is a quick view of your initiatives, updates, and delivery progress.</p>
+                </div>
+            </section>
+
+            <section class="metrics-grid">
+                <article class="card metric">
+                    <span class="label">Open tasks</span>
+                    <div class="value">14</div>
+                    <span class="delta neutral">5 due this week</span>
+                </article>
+                <article class="card metric">
+                    <span class="label">Milestones</span>
+                    <div class="value">08</div>
+                    <span class="delta positive">2 ahead of schedule</span>
+                </article>
+                <article class="card metric">
+                    <span class="label">Team health</span>
+                    <div class="value">96%</div>
+                    <span class="delta positive">Strong momentum</span>
+                </article>
+            </section>
+
+            <section class="content-grid">
+                <aside class="card panel">
+                    <div class="section-header">
+                        <h2>Recent activity</h2>
+                    </div>
+                    <ul id="activity-list" class="activity-list">
+                        <li>
+                            <div class="activity-item">
+                                <strong>Client review sent</strong>
+                                <small>Marketing launch plan</small>
+                            </div>
+                            <span class="activity-time">2h ago</span>
+                        </li>
+                        <li>
+                            <div class="activity-item">
+                                <strong>Milestone updated</strong>
+                                <small>Product design sprint</small>
+                            </div>
+                            <span class="activity-time">4h ago</span>
+                        </li>
+                        <li>
+                            <div class="activity-item">
+                                <strong>Task completed</strong>
+                                <small>QA regression pass</small>
+                            </div>
+                            <span class="activity-time">Yesterday</span>
+                        </li>
+                    </ul>
+                </aside>
+
+                <section class="card panel" id="project-summary">
+                    <div class="section-header">
+                        <h2>Your projects</h2>
+                        <a class="card-link" href="projects.html">Manage</a>
+                    </div>
+                    <div id="projects-container" class="project-grid">
+                        <article class="project-card">
+                            <div class="project-card-header">
+                                <h3>Website Redesign</h3>
+                                <span class="status-badge status-active">Active</span>
+                            </div>
+                            <p>Refining the homepage UX and onboarding flows for the new release.</p>
+                            <div class="project-meta">
+                                <span>7 tasks</span>
+                                <span>Due in 5 days</span>
+                            </div>
+                        </article>
+                        <article class="project-card">
+                            <div class="project-card-header">
+                                <h3>Mobile App Launch</h3>
+                                <span class="status-badge status-needs-review">Review</span>
+                            </div>
+                            <p>Final QA and stakeholder approval before the public rollout.</p>
+                            <div class="project-meta">
+                                <span>12 tasks</span>
+                                <span>Due tomorrow</span>
+                            </div>
+                        </article>
+                        <article class="project-card">
+                            <div class="project-card-header">
+                                <h3>CRM Migration</h3>
+                                <span class="status-badge status-complete">Complete</span>
+                            </div>
+                            <p>Data mapping and migration rollout are complete and validated.</p>
+                            <div class="project-meta">
+                                <span>18 tasks</span>
+                                <span>Closed</span>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 AxisTrace. All rights reserved.</p>
+        </footer>
+    </div>
+
     <script src="../js/api.js"></script>
     <script src="../js/dashboard.js"></script>
 </body>

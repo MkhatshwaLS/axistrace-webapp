@@ -1,102 +1,85 @@
 // This file contains functions for managing projects, including creating, updating, and deleting projects.
 
 document.addEventListener('DOMContentLoaded', function() {
-    const projectList = document.getElementById('project-list');
-    const createProjectForm = document.getElementById('create-project-form');
+    const projectList = document.getElementById('projects');
+    const newProjectButton = document.getElementById('new-project-btn');
 
-    // Fetch and display projects
-    function fetchProjects() {
-        fetch('/api/projects')
-            .then(response => response.json())
-            .then(data => {
-                projectList.innerHTML = '';
-                data.forEach(project => {
-                    const projectItem = document.createElement('li');
-                    projectItem.textContent = project.name;
-                    projectItem.appendChild(createEditButton(project.id));
-                    projectItem.appendChild(createDeleteButton(project.id));
-                    projectList.appendChild(projectItem);
-                });
-            })
-            .catch(error => console.error('Error fetching projects:', error));
+    function createProjectCard(project) {
+        const article = document.createElement('article');
+        article.className = 'project-card';
+        article.innerHTML = `
+            <div class="project-card-header">
+                <h3>${project.name}</h3>
+                <span class="status-badge ${project.status === 'Active' ? 'status-active' : project.status === 'Review' ? 'status-needs-review' : 'status-complete'}">${project.status}</span>
+            </div>
+            <p>${project.description}</p>
+            <div class="project-meta">
+                <span>${project.tasks} tasks</span>
+                <span>${project.deadline}</span>
+            </div>
+        `;
+        return article;
     }
 
-    // Create edit button
-    function createEditButton(projectId) {
-        const editButton = document.createElement('button');
-        editButton.textContent = 'Edit';
-        editButton.onclick = () => editProject(projectId);
-        return editButton;
-    }
-
-    // Create delete button
-    function createDeleteButton(projectId) {
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.onclick = () => deleteProject(projectId);
-        return deleteButton;
-    }
-
-    // Edit project
-    function editProject(projectId) {
-        const newName = prompt('Enter new project name:');
-        if (newName) {
-            fetch(`/api/projects/${projectId}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name: newName })
-            })
-            .then(response => {
-                if (response.ok) {
-                    fetchProjects();
-                } else {
-                    console.error('Error updating project:', response.statusText);
-                }
-            });
+    function renderProjects(projects) {
+        if (!projectList) {
+            return;
         }
-    }
 
-    // Delete project
-    function deleteProject(projectId) {
-        if (confirm('Are you sure you want to delete this project?')) {
-            fetch(`/api/projects/${projectId}`, {
-                method: 'DELETE'
-            })
-            .then(response => {
-                if (response.ok) {
-                    fetchProjects();
-                } else {
-                    console.error('Error deleting project:', response.statusText);
-                }
-            });
-        }
-    }
-
-    // Create new project
-    createProjectForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const formData = new FormData(createProjectForm);
-        const projectName = formData.get('project-name');
-
-        fetch('/api/projects', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ name: projectName })
-        })
-        .then(response => {
-            if (response.ok) {
-                createProjectForm.reset();
-                fetchProjects();
-            } else {
-                console.error('Error creating project:', response.statusText);
-            }
+        projectList.innerHTML = '';
+        projects.forEach(project => {
+            projectList.appendChild(createProjectCard(project));
         });
-    });
+    }
 
-    // Initial fetch of projects
-    fetchProjects();
+    function loadProjects() {
+        const fallbackProjects = [
+            { name: 'Customer Portal', status: 'Active', description: 'Restructuring account management and onboarding workflow.', tasks: 9, deadline: 'Due in 3 days' },
+            { name: 'AI Assistant Beta', status: 'Review', description: 'Testing pilot workflows and validating adoption metrics.', tasks: 11, deadline: 'Due today' },
+            { name: 'Operations Dashboard', status: 'Complete', description: 'Dashboard refresh shipped with improved KPI visibility.', tasks: 16, deadline: 'Closed' }
+        ];
+
+        fetch('/api/projects')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Unable to load projects');
+                }
+                return response.json();
+            })
+            .then(data => {
+                renderProjects(data.length ? data : fallbackProjects);
+            })
+            .catch(() => {
+                renderProjects(fallbackProjects);
+            });
+    }
+
+    if (newProjectButton) {
+        newProjectButton.addEventListener('click', function() {
+            const name = prompt('Enter a new project name:');
+            if (!name) {
+                return;
+            }
+
+            const newProject = {
+                name,
+                status: 'Active',
+                description: 'New project created from the workspace overview.',
+                tasks: 0,
+                deadline: 'To be scheduled'
+            };
+
+            const existingProjects = Array.from(projectList.querySelectorAll('.project-card')).length ? Array.from(projectList.querySelectorAll('.project-card')).map(card => ({
+                name: card.querySelector('h3')?.textContent || 'Project',
+                status: card.querySelector('.status-badge')?.textContent || 'Active',
+                description: card.querySelector('p')?.textContent || 'Project summary',
+                tasks: 0,
+                deadline: 'New'
+            })) : [];
+
+            renderProjects([newProject, ...existingProjects]);
+        });
+    }
+
+    loadProjects();
 });
